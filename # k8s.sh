@@ -89,7 +89,7 @@ sudo rm -rf $HOME/ .kube
 
 #join the nood
 #calico
-kubeadm join 10.0.0.125:6443 --token zl9hs4.wt33cv87dcu2vyt5 --discovery-token-ca-cert-hash sha256:56d53705847d13e1014307451c8defa0c2c72638104e41a0d9227d50a1213e9c
+kubeadm join 10.0.0.125:6443 --token ******************* --discovery-token-ca-cert-hash ***********
 
 kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml 
 kubectl create -f https://docs.projectcalico.org/manifests/custom-resources.yaml
@@ -97,7 +97,7 @@ sudo cat /etc/systemd/system/kubelet.service
 
 #weave:
 sudo kubeadm init --pod-network-cidr=10.32.0.0/12
-kubeadm join 10.0.0.158:6443 --token r0mszn.553v8qefxcb99r43 --discovery-token-ca-cert-hash sha256:135e928bbad9a1995f67aec00a2ecd75d69c25d4bbf62f38e266e2251b234c7e 
+kubeadm join 10.0.0.158:6443 --token r0mszn.553v8qefxcb99r43 --discovery-token-ca-cert-hash ***************
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 kubectl get pods --all-namespaces
 watch kubectl get pods --all-namespaces
